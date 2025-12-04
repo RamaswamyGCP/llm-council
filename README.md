@@ -14,6 +14,30 @@ In a bit more detail, here is what happens when you submit a query:
 
 This project was 99% vibe coded as a fun Saturday hack because I wanted to explore and evaluate a number of LLMs side by side in the process of [reading books together with LLMs](https://x.com/karpathy/status/1990577951671509438). It's nice and useful to see multiple responses side by side, and also the cross-opinions of all LLMs on each other's outputs. I'm not going to support it in any way, it's provided here as is for other people's inspiration and I don't intend to improve it. Code is ephemeral now and libraries are over, ask your LLM to change it in whatever way you like.
 
+## 🚀 Updates & Modernization
+
+We have recently overhauled the project to make it more robust, accessible, and extensible.
+
+### 1. Migration to LangGraph
+We replaced the custom-built orchestration logic with **[LangGraph](https://langchain-ai.github.io/langgraph/)**.
+*   **Why? (The Pros):**
+    *   **Standardization:** Uses industry-standard patterns for stateful agents.
+    *   **Observability:** Easier to debug and trace exactly what each agent is doing at each step.
+    *   **Extensibility:** Much simpler to add new stages, conditional logic, or human-in-the-loop steps in the future.
+
+### 2. Switch to Free Models
+We updated the default configuration to use high-quality **Free Models** via OpenRouter.
+*   **Why? (The Pros):**
+    *   **Accessibility:** You can run this entire "Council" of 4+ models completely for free. No credit card required.
+    *   **Performance:** Models like **Arcee Trinity Mini** and **Amazon Nova** provide incredible performance-per-dollar (infinite value!).
+    *   **Speed:** These smaller, efficient models are often faster than their giant counterparts.
+
+### 3. Robust Connectivity
+Updated the frontend configuration to bind to all network interfaces.
+*   **Why? (The Pros):**
+    *   **Reliability:** Fixes common "Connection Refused" errors during local development.
+    *   **Flexibility:** Allows you to access the UI from other devices on your local network.
+
 ## Setup
 
 ### 1. Install Dependencies
